@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice><Order><OrderID>O002</OrderID><OrderDate>2024-09-22</OrderDate><Status>Pending</Status><TotalAmt>600.00</TotalAmt></Order><Customer><CustomerName>tys</CustomerName><Address>PV15, KL, KL 20000</Address></Customer><InvoiceID>IV002</InvoiceID><OrderItems><Item><ProductName>24k Necklace</ProductName><Weight>2.00</Weight><Quantity>3</Quantity><Price>200.00</Price><Total>600</Total></Item></OrderItems></Invoice>

@@ -1,0 +1,8 @@
+[2024-09-20 10:06:37] INFO: User login attempt for email: admin@gmail.com
+[2024-09-20 10:07:35] INFO: User login attempt for email: foongsh-wp21@student.tarc.edu.my
+[2024-09-20 10:07:53] INFO: User login attempt for email: foongsh-wp21@student.tarc.edu.my
+[2024-09-20 10:08:03] INFO: User login attempt for email: foongsh-wp21@student.tarc.edu.my
+[2024-09-20 10:08:13] INFO: User login attempt for email: leefong@gmail.com
+[2024-09-20 10:17:22] INFO: User registration attempt for username: yaoqing
+[2024-09-20 10:18:35] INFO: User login attempt for email: admin@gmail.com
+[2024-09-20 10:24:50] INFO: User login attempt for email: ken@gmail.com

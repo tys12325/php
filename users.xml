@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user>
+    <userID>0</userID>
+    <username>adminUsername</username>
+    <email>admin@gmail.com</email>
+    <dob>1980-01-01</dob>
+    <password>$2y$10$iQTCHgDwO4zSP8RdoIkAhemisrq9hmfKC531ytiXpJn.g69IQa75y</password>
+  </user>
+  <user>
+    <userID>1967</userID>
+    <username>KENKENGOR</username>
+    <email>KenGor@gmail.com</email>
+    <dob>2024-09-04</dob>
+    <password>$2y$10$6j1UtJC44Lp2gFNz8LbYpOj.q5A.E1cbbsRTLxAKjpQ1GOb0GR6uy</password>
+  </user>
+  <user>
+    <userID>2874</userID>
+    <username>ZoeyLim</username>
+    <email>Zoey@gmail.com</email>
+    <dob>2024-09-06</dob>
+    <password>$2y$10$01brusp6nnueVg6yo9J9.e2b5qjMUX0C/kOK2xYtJWTpscNFAiUeq</password>
+  </user>
+  <user>
+    <userID>4279</userID>
+    <username>Siang Hoong</username>
+    <email>foongsh-wp21@student.tarc.edu.my</email>
+    <dob>2024-09-12</dob>
+    <password>$2y$10$2bnk9e6Wvrf9lS0LuNwhOuWjfpRQVRvHzF58tVjVlDSU3OWygCusK</password>
+  </user>
+  <user>
+    <userID>6891</userID>
+    <username>SiangJun</username>
+    <email>siangjun@gmail.com</email>
+    <dob>2024-09-05</dob>
+    <password>$2y$10$.WsKbAeQ3fqaWr0CxCfiy.bw85j2eU6C6EUbEsBYkdnJJYM8n52EG</password>
+  </user>
+  <user>
+    <userID>8401</userID>
+    <username>Ken</username>
+    <email>ken@gmail.com</email>
+    <dob>2024-09-17</dob>
+    <password>$2y$10$UuDSn8LorxgMEASnoIIZheBNcqycNRrNra.Rh/4EaeO9HqVNxMHUy</password>
+  </user>
+  <user>
+    <userID>9235</userID>
+    <username>ChengLeeFong</username>
+    <email>leefong@gmail.com</email>
+    <dob>2024-09-04</dob>
+    <password>$2y$10$fbUpdbAyIqtuO.BGt9RGyOsNG0rpM/E4bGlOKDDgu8KuCzCt9ZNAS</password>
+  </user>
+</users>

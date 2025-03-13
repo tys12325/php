@@ -1,0 +1,132 @@
+-- Create Database
+CREATE DATABASE IF NOT EXISTS starlightglory;
+USE starlightglory;
+
+CREATE TABLE `login` (
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+COMMIT;
+
+CREATE TABLE registeredUsers (
+    userID INT(255) AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    dob VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    confirmpassword VARCHAR(255) NULL,
+    isAdmin TINYINT(1) DEFAULT 0,
+    PRIMARY KEY (userID)
+);
+
+
+CREATE TABLE UserAddress (
+    addressID INT(11) PRIMARY KEY,
+    address VARCHAR(100) NOT NULL,		
+    city VARCHAR(100) NOT NULL,             
+    state VARCHAR(100) NOT NULL,          
+    zip_code VARCHAR(20) NOT NULL,        
+    phoneNum VARCHAR(20) NOT NULL,
+    userID INT(255),
+    FOREIGN KEY (userID) REFERENCES registeredUsers(userID)
+);
+
+-- Create Product Table
+CREATE TABLE Product (
+    ProductID VARCHAR(20) NOT NULL PRIMARY KEY,
+    ProductName VARCHAR(50) NOT NULL,
+    CategoryID INT(11) NOT NULL,
+    Quantity INT(100) NOT NULL,
+    Weight DECIMAL(5,2) NOT NULL,
+    Price DECIMAL(6,2) NOT NULL,
+    Description TEXT,
+    Image BLOB
+);
+
+ CREATE TABLE Category (
+    CategoryID INT(11) NOT NULL PRIMARY KEY,
+    CategoryName VARCHAR(50) NOT NULL
+);
+
+-- Create Cart Table
+CREATE TABLE Cart (
+    CartID VARCHAR(20) PRIMARY KEY,
+    NumberOfItems INT,
+    userID INT(255),
+    TotalAmt DECIMAL(10, 2),
+    FOREIGN KEY (userID) REFERENCES registeredUsers(userID)
+);
+
+-- Create Orderr Table
+CREATE TABLE Orderr (
+    OrderID VARCHAR(20) PRIMARY KEY,
+    OrderDate DATE DEFAULT CURRENT_TIMESTAMP,
+    Status VARCHAR(50),
+    TotalAmt DECIMAL(10, 2),
+    userID INT(255),
+    FOREIGN KEY (userID) REFERENCES registeredUsers(userID)
+);
+
+-- Create CartItem Table
+CREATE TABLE CartItem (
+    CartItemID VARCHAR(20) PRIMARY KEY,
+    CartID VARCHAR(20),
+    ProductID VARCHAR(20),
+    Quantity INT,
+    Price DECIMAL(10, 2),
+    TotalAmt DECIMAL(10, 2) GENERATED ALWAYS AS (Quantity * Price) VIRTUAL,
+    FOREIGN KEY (CartID) REFERENCES Cart(CartID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+
+-- Create OrderItem Table
+CREATE TABLE OrderItem (
+    OrderItemID VARCHAR(20) PRIMARY KEY,
+    OrderID VARCHAR(20),
+    ProductID VARCHAR(20),
+    Quantity INT,
+    Price DECIMAL(10, 2),
+    TotalAmt DECIMAL(10, 2) GENERATED ALWAYS AS (Quantity * Price) VIRTUAL,
+    FOREIGN KEY (OrderID) REFERENCES `Orderr`(OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+
+-- Create Invoice Table
+CREATE TABLE Invoice (
+    InvoiceID VARCHAR(20) PRIMARY KEY,
+    OrderID VARCHAR(20),
+    DateGenerated DATE DEFAULT CURRENT_TIMESTAMP,
+    TimeGenerated TIME DEFAULT CURRENT_TIME,
+    FOREIGN KEY (OrderID) REFERENCES `Orderr`(OrderID)
+);
+
+-- Create Payment Table
+CREATE TABLE Payment (
+    PaymentID VARCHAR(20) PRIMARY KEY,
+    PaymentDate DATE,
+    PaymentTime TIME,
+    Amount DECIMAL(10, 2),
+    InvoiceID VARCHAR(20),
+    FOREIGN KEY (InvoiceID) REFERENCES Invoice(InvoiceID)
+);
+
+-- Create Admin Table
+CREATE TABLE Admin (
+    AdminID VARCHAR(20) PRIMARY KEY,
+    Username VARCHAR(50) UNIQUE,
+    Role VARCHAR(50),
+    Email VARCHAR(100) UNIQUE
+);
+
+-- Create GoldPrice Table
+CREATE TABLE GoldPrice (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    GoldPrice DECIMAL(6, 2) NOT NULL,
+    LastUpdated TIMESTAMP NOT NULL
+);
+
+INSERT INTO category (CategoryID, CategoryName) VALUES (1, 'Ring');
+INSERT INTO category (CategoryID, CategoryName) VALUES (2, 'Necklace');
+INSERT INTO category (CategoryID, CategoryName) VALUES (3, 'Bracelet');
+INSERT INTO category (CategoryID, CategoryName) VALUES (4, 'Earrings');
